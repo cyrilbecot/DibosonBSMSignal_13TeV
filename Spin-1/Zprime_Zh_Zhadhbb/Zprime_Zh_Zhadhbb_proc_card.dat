@@ -32,5 +32,5 @@ define l- = e- mu-
 define vl = ve vm vt
 define vl~ = ve~ vm~ vt~
 define q = g u c d s u~ c~ d~ s~ b b~
-generate p p > vz, ( vz > h z, h > q q, z > l+ l-)
-output Zprime_Zh_Zlephbb
+generate p p > vz, (vz > h z, h > q q, z > q q)
+output Zprime_Zh_Zhadhbb

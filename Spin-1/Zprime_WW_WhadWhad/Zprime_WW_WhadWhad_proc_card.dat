@@ -32,5 +32,8 @@ define l- = e- mu-
 define vl = ve vm vt
 define vl~ = ve~ vm~ vt~
 define q = g u c d s u~ c~ d~ s~ b b~
-generate p p > vz, ( vz > h z, h > q q, z > l+ l-)
-output Zprime_Zh_Zlephbb
+define ww = w+ w-
+#define lep = l+ l-
+#define neu = vl vl~
+generate p p > vz, ( vz > ww, w+ > q q, w- > q q)
+output Zprime_WW_WhadWhad
