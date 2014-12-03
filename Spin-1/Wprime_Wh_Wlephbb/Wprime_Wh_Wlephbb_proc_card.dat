@@ -32,6 +32,7 @@ define l- = e- mu-
 define vl = ve vm vt
 define vl~ = ve~ vm~ vt~
 define q = g u c d s u~ c~ d~ s~ b b~
+define vc = vc+ vc-
 define vw = w+ w-
 define lep = l+ l-
 define neu = vl vl~
