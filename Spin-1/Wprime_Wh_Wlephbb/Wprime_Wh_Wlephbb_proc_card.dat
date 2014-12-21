@@ -26,7 +26,6 @@ set gauge unitary
 set complex_mass_scheme False
 import model Vector_Triplet_free_Width_UFO
 define p = g u c d s u~ c~ d~ s~
-define j = g u c d s u~ c~ d~ s~
 define l+ = e+ mu+
 define l- = e- mu-
 define vl = ve vm vt
@@ -36,5 +35,5 @@ define vc = vc+ vc-
 define vw = w+ w-
 define lep = l+ l-
 define neu = vl vl~
-generate p p > vc, ( vc > h vw, h > q q, vw > lep neu)
+generate p p > vc, (vc > h vw, h > q q, vw > lep neu)
 output Wprime_Wh_Wlephbb
