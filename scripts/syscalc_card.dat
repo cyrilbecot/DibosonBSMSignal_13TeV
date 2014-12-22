@@ -1,0 +1,18 @@
+
+# Central scale factors
+scalefact:
+1 2 0.5
+# choice of correlation scheme between muF and muR
+scalecorrelation:
+-1
+# PDF sets and number of members (0 or none for all members)
+PDF:
+NNPDF23_lo_as_0130_qed.LHgrid
+NNPDF23_lo_as_0119_qed.LHgrid 1
+cteq6l1.LHgrid 1
+HERAPDF15LO_EIG.LHgrid
+CT10nlo.LHgrid
+MSTW2008nlo68cl.LHgrid 1
+NNPDF23_nlo_as_0119.LHgrid 1
+NNPDF30_nlo_as_0118.LHgrid 1
+
