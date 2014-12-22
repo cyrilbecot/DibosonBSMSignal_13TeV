@@ -19,5 +19,5 @@ do
   iteration=$(( iteration + 1 ))
   mass=(`head -n $iteration $3  | tail -1`)
   echo "Submitting jobs for X mass = "$mass" GeV"
-  bsub -q8nh $1/signal_generation.sh $2 $mass
+  bsub -q2nd $1/signal_generation.sh $1 $2 $mass
 done

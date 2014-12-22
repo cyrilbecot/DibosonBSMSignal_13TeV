@@ -8,10 +8,10 @@ echo "System release " `cat /etc/redhat-release` #And the system release
 #First you need to set couple of settings:
 
 # name of the run
-name=${1}
+name=${2}
 
 # which mass
-mass=$2
+mass=$3
 
 #________________________________________
 # to be set for user spesific
@@ -20,14 +20,14 @@ mass=$2
 #For correct running you should place at least the run and proc card in a folder under the name "cards" in the same folder where you are going to run the script
 cd /afs/cern.ch/work/s/syu/public/CMSSW_7_2_3/src
 export SCRAM_ARCH=slc6_amd64_gcc481; eval `scramv1 runtime -sh`
-cd -
+cd $1
 export PRODHOME=`pwd`
 CARDSDIR=${PRODHOME}/cards
 
 
 MGBASEDIRORIG=MG5_aMC_v2_2_1
 
-cd $MGBASEDIRORIG
+cd ${PRODHOME}/$MGBASEDIRORIG
 
 LHAPDFCONFIG=`echo "$LHAPDF_DATA_PATH/../../bin/lhapdf-config"`
 
