@@ -62,16 +62,16 @@ sed 's/'${name}'/'${newname}'/g' $CARDSDIR/${name}_proc_card.dat > ${newname}_pr
 ./bin/mg5_aMC ${newname}_proc_card.dat
   
 cd ${newname}
-sed 's/MASSVZ/'$mass'/g' $CARDSDIR/${name}_param_card.dat > Cards/param_card.dat
+sed 's/MASSVZ/'$mass'/g' $CARDSDIR/param_card.dat > Cards/param_card.dat
 
 #######################
 #Locating the run card#
 #######################
-if [ ! -e $CARDSDIR/${name}_run_card.dat ]; then
-  echo $CARDSDIR/${name}_run_card.dat " does not exist!"
+if [ ! -e $CARDSDIR/run_card.dat ]; then
+  echo $CARDSDIR/run_card.dat " does not exist!"
   exit 1;
 else
-  cp $CARDSDIR/${name}_run_card.dat Cards/run_card.dat
+  cp $CARDSDIR/run_card.dat Cards/run_card.dat
 fi      
 
 
