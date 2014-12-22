@@ -57,15 +57,15 @@ Block mass
 ## INFORMATION FOR RHOINPUTS
 ###################################
 Block rhoinputs 
-    1 3.000000e+00 # gst 
+    1 2.000000e+00 # gst 
     2 MASSVZ       # MVz 
     3 1.000000e+00 # cvvw 
-    4 1.024330e+00 # cq 
-    5 1.024330e+00 # cl 
-    6 1.024330e+00 # c3 
-    7 -0.976246 #ch
-    8 -0.0240503 #cvvhh
-    9 0.928159     # cvvv 
+    4 1.000000e+00 # cq 
+    5 1.000000e+00 # cl 
+    6 1.000000e+00 # c3 
+    7 1.000000e+00 # ch 
+    8 0.000000e+00 # cvvhh 
+    9 1.000000e+00 # cvvv 
    10 1.000000e+00 # cvvvv 
 
 ###################################
@@ -92,6 +92,8 @@ DECAY   6 1.508336e+00 # WT
 DECAY  23 2.441404e+00 # WZ 
 DECAY  24 2.047600e+00 # WW 
 DECAY  25 5.753088e-03 # WH 
+DECAY 9000001 1.000000e-03 # WVz 
+DECAY 9000002 1.000000e-03 # WVc 
 ## Dependent parameters, given by model restrictions.
 ## Those values should be edited following the 
 ## analytical expression. MG5 ignores those values 
@@ -110,8 +112,6 @@ DECAY  15 0.000000 # ta- : 0.0
 DECAY  16 0.000000 # vt : 0.0 
 DECAY  21 0.000000 # g : 0.0 
 DECAY  22 0.000000 # a : 0.0 
-DECAY  9000001 1.000000e-03 # vz 
-DECAY  9000002 1.000000e-03 #vc
 #===========================================================
 # QUANTUM NUMBERS OF NEW STATE(S) (NON SM PDG CODE)
 #===========================================================
