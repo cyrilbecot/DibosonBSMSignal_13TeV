@@ -36,7 +36,7 @@ Block mass
    23 9.154450e+01 # MZ 
    24 8.026736e+01 # MW 
    25 1.000000e+02 # MH 
-   39 1.000000e+03 # MGr 
+   39 MASSVZ # MGr 
 ## Dependent parameters, given by model restrictions.
 ## Those values should be edited following the 
 ## analytical expression. MG5 ignores those values 
