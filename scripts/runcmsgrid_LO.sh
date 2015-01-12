@@ -18,6 +18,8 @@ export LHAPDF_DATA_PATH=`$LHAPDFCONFIG --datadir`
 
 
 
-outfile="final_"`echo "${1##*/}"`
+infile=$1
+echo $infile
+outfile=/data4/syu/step2_13TeV_Diboson`echo "${infile##*XtoZh_new_LHE}"`
 echo "Producing weights and saved in "$outfile
 ./mgbasedir/SysCalc/sys_calc $1 syscalc_card.dat $outfile
