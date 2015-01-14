@@ -11,8 +11,6 @@ How to use the LHE analyzer
 
 // you will be asked to Enter passphrase for key several times
 
-  git clone git@github.com:syuvivida/
-
   git clone git@github.com:syuvivida/DibosonBSMSignal_13TeV.git DibosonBSMSignal_13TeV
 
   mv DibosonBSMSignal_13TeV/analyzer/DummyLHEAnalyzer.cc GeneratorInterface/LHEInterface/test/.
