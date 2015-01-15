@@ -62,7 +62,7 @@ sed 's/'${name}'/'${newname}'/g' $CARDSDIR/${name}_proc_card.dat > ${newname}_pr
 ./bin/mg5_aMC ${newname}_proc_card.dat
   
 cd ${newname}
-sed 's/MASSVZ/'$mass'/g' $CARDSDIR/param_card.dat > Cards/param_card.dat
+sed 's/MASSVZ/'$mass'/g' $CARDSDIR/HVT_param_card.dat > Cards/param_card.dat
 
 #######################
 #Locating the run card#
