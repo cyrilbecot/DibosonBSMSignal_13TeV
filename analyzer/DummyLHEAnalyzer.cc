@@ -27,7 +27,9 @@ private:
 
   TH1F* h_Xpt; // new particle 
   TH1F* h_Bpt[2];  // two bosons
+  TH1F* h_Bp[2];
   TH1F* h_Dpt[2][2]; // daughter of two bosons
+  TH1F* h_Dp[2][2]; // daughter of two bosons
 
   TH1F* h_Xm;
   TH1F* h_Bm[2];
@@ -72,6 +74,10 @@ public:
 	h_Bpt[i]-> SetXTitle(Form("p_{T}(Boson %d) [GeV]",i));
 	h_Bpt[i]-> Sumw2();
 
+	h_Bp[i] = new TH1F(Form("h_Bp%d",i),Form("Boson %d",i), 125,0,2500);
+	h_Bp[i]-> SetXTitle(Form("p(Boson %d) [GeV]",i));
+	h_Bp[i]-> Sumw2();
+
 	h_Bm[i] = new TH1F(Form("h_Bm%d",i), Form("Boson %d",i), 100,50,150);
 	h_Bm[i] -> SetXTitle(Form("M(Boson %d) [GeV]",i));
 	h_Bm[i]-> Sumw2();
@@ -88,6 +94,10 @@ public:
 	    h_Dpt[i][j] = new TH1F(Form("h_Dpt%d_%d",i,j), Form("Daughter %d of Boson %d",j,i), 125,0,2500);	    
 	    h_Dpt[i][j]-> SetXTitle(Form("p_{T}(Daughter %d)[GeV]",j));
 	    h_Dpt[i][j]-> Sumw2();
+
+	    h_Dp[i][j] = new TH1F(Form("h_Dp%d_%d",i,j), Form("Daughter %d of Boson %d",j,i), 125,0,2500);	    
+	    h_Dp[i][j]-> SetXTitle(Form("p(Daughter %d)[GeV]",j));
+	    h_Dp[i][j]-> Sumw2();
 
 	    h_Dy[i][j]  = (TH1F*)h_y->Clone(Form("h_Dy%d_%d",i,j));
 	    h_Dy[i][j] -> SetXTitle(Form("Rapidity of Daughter %d of Boson %d",j,i));
@@ -153,12 +163,14 @@ private:
     for(int i=0; i<2; i++)
       {
 	h_Bpt[i]->Fill(l4_B[i].Pt());
+	h_Bp[i]->Fill(l4_B[i].P());
 	h_Bm[i]->Fill(l4_B[i].M());
 	h_By[i]->Fill(l4_B[i].Rapidity());
 	h_D_dR[i]->Fill(l4_d[i][0].DeltaR(l4_d[i][1]));
 
 	for(int j=0; j<2; j++){
 	  h_Dpt[i][j]->Fill(l4_d[i][j].Pt());
+	  h_Dp[i][j]->Fill(l4_d[i][j].P());
 	  h_Dy[i][j]->Fill(l4_d[i][j].Rapidity());
 	}
       }
@@ -173,12 +185,14 @@ private:
 
     for(int i=0; i<2; i++){
       h_Bpt[i]->Write();
+      h_Bp[i]->Write();
       h_Bm[i]->Write();
       h_By[i]->Write();
       h_D_dR[i]->Write();
 
       for(int j=0; j<2; j++){
 	h_Dpt[i][j]->Write();
+	h_Dp[i][j]->Write();
 	h_Dy[i][j]->Write();
       }
 

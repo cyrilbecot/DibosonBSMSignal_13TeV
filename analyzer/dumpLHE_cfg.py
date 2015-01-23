@@ -7,7 +7,7 @@ options.parseArguments()
 
 process = cms.Process("dumpLHE")
 process.load("FWCore.MessageLogger.MessageLogger_cfi")
-
+process.MessageLogger.cerr.FwkReport.reportEvery = 1000
 process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(options.maxEvents)
 )
