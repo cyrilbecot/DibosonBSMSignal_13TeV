@@ -277,4 +277,3 @@
 30 50 = sys_matchscale # variation of merging scale
 # PDF sets and number of members (0 or none for all members).
 CT10nlo.LHgrid = sys_pdf # matching scales
-247000		 = lhaid 
