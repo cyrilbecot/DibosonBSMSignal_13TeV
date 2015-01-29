@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /afs/cern.ch/work/s/syu/public/CMSSW_7_2_3/src
+cd /afs/cern.ch/work/s/syu/public/CMSSW_7_4_0_pre5/src
 export SCRAM_ARCH=slc6_amd64_gcc481; eval `scramv1 runtime -sh`
 cd -
 

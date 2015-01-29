@@ -15,8 +15,8 @@ set number=`grep -a "<event>" $file  | wc -l`
 #  set number=`grep -a "9000002" $file | grep -a "vc+ : cmath" | wc -l`
 # echo $number
  if ($number  != 50000) then
-# if ($number != 9450000) then
-# if ($number != 18900000) then
+# if ($number != 14550000) then
+# if ($number != 29100000) then
   echo $file "has a problem." $number "events are produced"
  endif
 end
