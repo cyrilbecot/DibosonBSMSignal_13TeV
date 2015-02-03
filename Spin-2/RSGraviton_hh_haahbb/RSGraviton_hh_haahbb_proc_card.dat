@@ -26,5 +26,5 @@ set gauge unitary
 set complex_mass_scheme False
 import model RS_bulk_ktilda
 define p = g u c d s u~ c~ d~ s~
-generate p p > h2, ( h2 > H H, h > a a , H > b b~)
+generate p p > y , ( y > H H, h > a a , H > b b~)
 output RSGraviton_hh_haahbb
