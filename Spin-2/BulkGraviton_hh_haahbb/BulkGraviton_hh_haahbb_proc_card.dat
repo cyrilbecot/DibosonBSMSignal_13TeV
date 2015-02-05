@@ -26,7 +26,5 @@ set gauge unitary
 set complex_mass_scheme False
 import model RS_bulk_ktilda
 define p = g u c d s u~ c~ d~ s~
-define lep = e+ e- mu+ mu-
-define nus = ve~ vm~ ve vm
-generate p p > y , ( y > H H , H > lep lep nus nus, H > b b~)
-output RSGraviton_hh_hVVhbb_fullLep
+generate p p > y , ( y > H H, h > a a , H > b b~)
+output BulkGraviton_hh_haahbb

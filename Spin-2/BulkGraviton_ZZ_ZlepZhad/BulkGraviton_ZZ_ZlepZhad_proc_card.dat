@@ -26,6 +26,8 @@ set gauge unitary
 set complex_mass_scheme False
 import model RS_bulk_ktilda
 define p = g u c d s u~ c~ d~ s~
+define l+ = e+ mu+
+define l- = e- mu-
 define q = g u c d s u~ c~ d~ s~ b b~
-generate p p > y, ( y > w+ w-, w+ > q q, w- > q q)
-output RSGraviton_WW_WhadWhad
+generate p p > y, ( y > z z > l+ l- q q)
+output BulkGraviton_ZZ_ZlepZhad

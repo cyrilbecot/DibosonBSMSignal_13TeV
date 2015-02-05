@@ -34,4 +34,4 @@ define q = g u c d s u~ c~ d~ s~ b b~
 define lep = l+ l-
 define neu = vl vl~
 generate p p > y, ( y > w+ w- > lep neu q q)
-output RSGraviton_WW_WlepWhad
+output BulkGraviton_WW_WlepWhad
