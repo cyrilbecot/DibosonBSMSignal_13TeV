@@ -30,8 +30,9 @@ define l+ = e+ mu+
 define l- = e- mu-
 define vl = ve vm vt
 define vl~ = ve~ vm~ vt~
-import model heft_radion_twiki
-define lep = l+ l-
-define neu = vl vl~
-generate p p > h2 j j , ( h2 > w+ w- > lep neu j j)
+import model heft_radion
+define p = u c d s u~ c~ d~ s~
+define j = u c d s u~ c~ d~ s~
+define ferm = u c d s u~ c~ d~ s~ e- mu- ta- e+ mu+ ta+ vl vl~
+generate p p > h2 j j $$ z w+ w- / g a h , ( h2 > W+ w- , w+ > ferm ferm , w- > ferm ferm )
 output vbf_h2_ww
