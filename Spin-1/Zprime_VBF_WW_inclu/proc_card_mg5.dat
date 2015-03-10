@@ -1,0 +1,31 @@
+#************************************************************
+#*                     MadGraph5_aMC@NLO                    *
+#*                                                          *
+#*                *                       *                 *
+#*                  *        * *        *                   *
+#*                    * * * * 5 * * * *                     *
+#*                  *        * *        *                   *
+#*                *                       *                 *
+#*                                                          *
+#*                                                          *
+#*         VERSION 2.2.1                 2014-09-25         *
+#*                                                          *
+#*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+#*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+#*                                                          *
+#************************************************************
+#*                                                          *
+#*               Command File for MadGraph5_aMC@NLO         *
+#*                                                          *
+#*     run as ./bin/mg5_aMC  filename                       *
+#*                                                          *
+#************************************************************
+set group_subprocesses Auto
+set ignore_six_quark_processes False
+set gauge unitary
+set complex_mass_scheme False
+import model Vector_Triplet_free_Width_UFO
+define p = u c d s u~ c~ d~ s~
+define j = u c d s u~ c~ d~ s~
+define ferm = u c d s u~ c~ d~ s~ e- mu- ta- e+ mu+ ta+ vl vl~
+generate p p > vz j j $$ z w+ w- / g a h , ( vz > w+ w- , w+ > ferm ferm , w- ferm ferm )
