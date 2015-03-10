@@ -26,7 +26,7 @@ set gauge unitary
 set complex_mass_scheme False
 import model heft_radion
 define p = g u c d s u~ c~ d~ s~
-define lep = e+ e- mu+ mu-
+define lep = e+ e- mu+ mu- ta+ ta-
 define nus = ve~ vm~ ve vm
 define jet =  u c d s u~ c~ d~ s~ b b~
 define all = jet nus lep
