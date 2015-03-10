@@ -26,8 +26,8 @@ set gauge unitary
 set complex_mass_scheme False
 import model Vector_Triplet_free_Width_UFO
 define p = g u c d s u~ c~ d~ s~
-define l+ = e+ mu+
-define l- = e- mu-
+define l+ = e+ mu+ ta+
+define l- = e- mu- ta-
 define q = g u c d s u~ c~ d~ s~ b b~
 define vc = vc+ vc-
 define vw = w+ w-
