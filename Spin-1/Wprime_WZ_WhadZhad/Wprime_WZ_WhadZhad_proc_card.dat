@@ -26,7 +26,7 @@ set gauge unitary
 set complex_mass_scheme False
 import model Vector_Triplet_free_Width_UFO
 define p = g u c d s u~ c~ d~ s~
-define q = g u c d s u~ c~ d~ s~ b b~
+define q = u c d s b u~ c~ d~ s~ b~
 define vc = vc+ vc-
 define vw = w+ w-
 generate p p > vc, (vc > vw z, vw > q q, z > q q)
