@@ -1,25 +1,3 @@
-#************************************************************
-#*                     MadGraph5_aMC@NLO                    *
-#*                                                          *
-#*                *                       *                 *
-#*                  *        * *        *                   *
-#*                    * * * * 5 * * * *                     *
-#*                  *        * *        *                   *
-#*                *                       *                 *
-#*                                                          *
-#*                                                          *
-#*         VERSION 2.2.1                 2014-09-25         *
-#*                                                          *
-#*    The MadGraph5_aMC@NLO Development Team - Find us at   *
-#*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
-#*                                                          *
-#************************************************************
-#*                                                          *
-#*               Command File for MadGraph5_aMC@NLO         *
-#*                                                          *
-#*     run as ./bin/mg5_aMC  filename                       *
-#*                                                          *
-#************************************************************
 set group_subprocesses Auto
 set ignore_six_quark_processes False
 set gauge unitary
@@ -27,7 +5,7 @@ set complex_mass_scheme False
 import model RS_bulk_ktilda
 define p = g u c d s u~ c~ d~ s~
 define lep = e+ e- mu+ mu- ta+ ta-
-define nus = ve~ vm~ ve vm
+define nus = ve~ vm~ vt~ ve vm vt
 define jet =  u c d s u~ c~ d~ s~ b b~
 define all = jet nus lep
 generate p p > y , ( y > H H , H > w+ w- > all all all all / g a , H > b b~)
