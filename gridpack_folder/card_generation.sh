@@ -66,7 +66,7 @@ do
   newname=${name}_narrow_M${mass}
   mkdir $topdir/$newname
   dir=$CARDSDIR/$name/$newname
-  sed -e 's/.*output.*/output '${newname}' -nojpeg\n/' $CARDSDIR/${name}_proc_card.dat > $dir/${newname}_proc_card.dat
+  sed -e 's/'$name'/'${newname}' -nojpeg\n/g' $CARDSDIR/${name}_proc_card.dat > $dir/${newname}_proc_card.dat
   sed 's/MASS/'$mass'/g' $CARDSDIR/$custom > $dir/${newname}_customizecards.dat
   cp $CARDSDIR/run_card.dat $dir/${newname}_run_card.dat
 done
