@@ -3,7 +3,6 @@ set ignore_six_quark_processes False
 set gauge unitary
 set complex_mass_scheme False
 import model RS_bulk_ktilda
-define p = g u c d s u~ c~ d~ s~
 define lep = e+ e- mu+ mu- ta+ ta-
 define nus = ve~ vm~ vt~ ve vm vt
 define jet =  u c d s u~ c~ d~ s~ b b~
