@@ -1,10 +1,10 @@
 To produce gridpack cards of multiple mass points, do the following:
 
 1) prepare process card of the channel of interest, make sure it's 
- a 4 F production, i.e. "define p = u c d s u~ c~ d~ s~": definition 
+ a 4-flavor production, i.e. "define p = u c d s u~ c~ d~ s~": definition 
  of proton does not have b quarks.
 
- If you want to generate 5F mode, you need to change the PDF set in 
+ If you want to generate 5-flavor mode, you need to change the PDF set in 
  cards/run_card.dat
 
 2) prepare a customization card to set the mass and width, 
