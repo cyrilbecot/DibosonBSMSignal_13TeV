@@ -2,7 +2,7 @@ set group_subprocesses Auto
 set ignore_six_quark_processes False
 set gauge unitary
 set complex_mass_scheme False
-import model Vector_Triplet_free_Width_UFO
+import model Vector_Triplet_free_Width_UFO_VBF
 define p = u c d s u~ c~ d~ s~
 define j = p
 define vl = ve vm vt
