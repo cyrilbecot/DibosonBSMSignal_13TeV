@@ -1,9 +1,9 @@
 How to use the LHE analyzer
 ======================
 
-  cmsrel CMSSW_7_2_3
+  cmsrel CMSSW_7_1_14
 
-  cd CMSSW_7_2_3/src/
+  cd CMSSW_7_1_14/src/
 
   cmsenv
 

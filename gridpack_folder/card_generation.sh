@@ -52,8 +52,8 @@ fi
 ########################
 #Run the code-generation step to create the process directory
 ########################
-dir=$CARDSDIR/$name
-mkdir $dir
+topdir=$CARDSDIR/$name
+mkdir $topdir
 iteration=0
 lastfile=`cat $massInput | wc -l`
 echo "There are "$lastfile" mass points"
@@ -63,8 +63,10 @@ do
   iteration=$(( iteration + 1 ))
   mass=(`head -n $iteration $massInput  | tail -1`)
   echo "Producing cards for X mass = "$mass" GeV"
-  newname=${name}_M${mass}
-  sed 's/'${name}'/'${newname}'\n/g' $CARDSDIR/${name}_proc_card.dat > $dir/${newname}_proc_card.dat
+  newname=${name}_narrow_M${mass}
+  mkdir $topdir/$newname
+  dir=$CARDSDIR/$name/$newname
+  sed -e 's/'$name'/'${newname}' -nojpeg\n/g' $CARDSDIR/${name}_proc_card.dat > $dir/${newname}_proc_card.dat
   sed 's/MASS/'$mass'/g' $CARDSDIR/$custom > $dir/${newname}_customizecards.dat
   cp $CARDSDIR/run_card.dat $dir/${newname}_run_card.dat
 done
