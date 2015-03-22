@@ -471,7 +471,7 @@ sN = Parameter(name = 'sN',
                value = 'cmath.sin(thN)',
                texname = 's_N')
 
-sw2 = Parameter(name = 'sw2',
+w2 = Parameter(name = 'sw2',
                 nature = 'internal',
                 type = 'real',
                 value = '1 - MW**2/MZ**2',
@@ -479,7 +479,7 @@ sw2 = Parameter(name = 'sw2',
 
 sw = Parameter(name = 'sw',
                nature = 'internal',
-               type = 'real',
+                      type = 'real',
                value = 'cmath.sqrt(sw2)',
                texname = 's_w')
 

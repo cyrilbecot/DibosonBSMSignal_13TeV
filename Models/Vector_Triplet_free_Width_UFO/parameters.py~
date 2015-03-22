@@ -470,27 +470,3 @@ sN = Parameter(name = 'sN',
                type = 'real',
                value = 'cmath.sin(thN)',
                texname = 's_N')
-
-sw2 = Parameter(name = 'sw2',
-                nature = 'internal',
-                type = 'real',
-                value = '1 - MW**2/MZ**2',
-                texname = '\\text{sw2}')
-
-sw = Parameter(name = 'sw',
-               nature = 'internal',
-               type = 'real',
-               value = 'cmath.sqrt(sw2)',
-               texname = 's_w')
-
-v = Parameter(name = 'v',
-              nature = 'internal',
-              type = 'real',
-              value = '(2*MW*sw)/ee',
-              texname = 'v')
-
-AH = Parameter(name = 'AH',
-               nature = 'internal',
-               type = 'real',
-               value = '(47*ee**2*(1 - (2*MH**4)/(987.*MT**4) - (14*MH**2)/(705.*MT**2) + (213*MH**12)/(2.634632e7*MW**12) + (5*MH**10)/(119756.*MW**10) + (41*MH**8)/(180950.*MW**8) + (87*MH**6)/(65800.*MW**6) + (57*MH**4)/(6580.*MW**4) + (33*MH**2)/(470.*MW**2)))/(72.*cmath.pi**2*v)',
-               texname = 'A_H')
