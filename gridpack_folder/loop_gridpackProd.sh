@@ -10,7 +10,6 @@ then
     exit 1
 fi
 
-cd $1
 iteration=0
 massfile=$3
 lastfile=`cat $massfile | wc -l`
@@ -25,5 +24,6 @@ do
   echo $process
   dir=$4/$2/$process
   ls $dir
-  ./gridpack_generation.sh $process $dir
+#  echo $1, $process, $dir
+  bsub -q2nd $PWD/runJob.sh $1 $process $dir
 done
