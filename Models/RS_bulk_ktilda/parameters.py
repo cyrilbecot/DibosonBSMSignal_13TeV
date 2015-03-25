@@ -180,7 +180,7 @@ MW = Parameter(name = 'MW',
 MH = Parameter(name = 'MH',
                nature = 'external',
                type = 'real',
-               value = 125.7,
+               value = 125,
                texname = '\\text{MH}',
                lhablock = 'MASS',
                lhacode = [ 25 ])
