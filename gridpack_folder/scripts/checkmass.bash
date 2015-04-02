@@ -16,8 +16,8 @@ echo "There are "$lastfile" mass points"
 process=$1
 spin=$3
 version=$4
-dir=/store/group/phys_generator/cvmfs/gridpacks/slc6_amd64_gcc481/13TeV/madgraph/V5_2.2.2//exo_diboson/Spin-${spin}/${process}/narrow/$version
-
+#dir=/store/group/phys_generator/cvmfs/gridpacks/slc6_amd64_gcc481/13TeV/madgraph/V5_2.2.2//exo_diboson/Spin-${spin}/${process}/narrow/$version
+dir=/cvmfs/cms.cern.ch/phys_generator/gridpacks/slc6_amd64_gcc481/13TeV/madgraph/V5_2.2.2//exo_diboson/Spin-${spin}/${process}/narrow/$version 
 while [ $iteration -lt $lastfile ]; 
 do
   iteration=$(( iteration + 1 ))
