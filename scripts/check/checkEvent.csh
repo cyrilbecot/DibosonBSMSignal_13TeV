@@ -8,10 +8,13 @@ set number=`grep -a "<event>" $file  | wc -l`
 #set number=`grep -a 'wgt id="10"' $file  | wc -l`
 #set number=`grep -a "1.255000e+02" $file  | wc -l`
 #set number=`grep -a "247000    = lhaid" $file | wc -l`
+#set number=`grep -a "import model heft_radion" $file  | wc -l` 
 #set number=`grep -a WH02 $file | wc -l`
+#set number=`grep -a "import model RS_bulk_ktilda" $file  | wc -l`
 #set number=`grep -a WGr $file | wc -l`
 # set number=`grep -a "9.118760e+01" $file  | wc -l`
 # set number=`grep -a "5.753088e-03" $file  | wc -l`
+#set number=`grep -a "import model Vector_Triplet_free_Width_UFO" $file  | wc -l` 
 #  set number=`grep -a "9000002" $file | grep -a "vc+ : cmath" | wc -l`
 # echo $number
  if ($number  != 50000) then
