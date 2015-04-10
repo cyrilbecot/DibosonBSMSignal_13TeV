@@ -15,7 +15,7 @@ How to use the LHE analyzer
 
   mv DibosonBSMSignal_13TeV/analyzer/DummyLHEAnalyzer.cc GeneratorInterface/LHEInterface/test/.
 
-  mv DibosonBSMSignal_13TeV/analyzer/dumpLHE_cfg.py .  
+  mv DibosonBSMSignal_13TeV/analyzer/dumpLHE_cfg*.py .  
 
   rm -rf DibosonBSMSignal_13TeV
 
