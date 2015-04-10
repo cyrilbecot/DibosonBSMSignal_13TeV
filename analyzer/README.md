@@ -25,4 +25,5 @@ How to use the LHE analyzer
 
  3. To run,
 
-  cmsRun dumpLHE_cfg.py inputFiles="file:xxx.lhe" outputFile="test.root" maxEvents=1000
+LHE input:  cmsRun dumpLHE_cfg.py inputFiles="file:xxx.lhe" outputFile="test.root" maxEvents=-1
+GEN root input: cmsRun dumpLHEROOT_cfg.py inputFiles="file:xxx.root" outputFile="test.root" maxEvents=-1
