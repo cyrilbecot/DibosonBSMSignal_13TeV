@@ -47,7 +47,10 @@ private:
   TH1F* h_dR;
   TH1F* h_D_dR[2]; // between the daughters
 
-
+  TH1F* h_cos;
+  TH1F* h_cosThetaStar; // Boson scattering angle in the X rest frame
+  TH1F* h_cosTheta[2]; //Daugher scattering angle in the Boson 1 rest frame
+  TH1F* h_cosPhi; // angle between two decay planes
 public:
   explicit DummyLHEAnalyzer( const edm::ParameterSet & cfg ) : 
     src_( cfg.getParameter<InputTag>( "src" )),
@@ -66,6 +69,8 @@ public:
     h_dR = new TH1F("h_dR","",200,0,2);
     h_dR->Sumw2();
 
+    h_cos = new TH1F("h_cos","",100,-1,1);
+    h_cos->Sumw2();
 
     h_Xpt = new TH1F("h_Xpt","",100,0,500);
     h_Xpt-> SetXTitle("p_{T}(X) [GeV]");
@@ -74,13 +79,20 @@ public:
     h_Xpz = (TH1F*)h_pz->Clone("h_Xpz");
     h_Xpz-> SetXTitle("p_{z}(X) [GeV]");
 
-
     h_Xm  = new TH1F("h_Xm","",1000,0,5000);
     h_Xm -> SetXTitle("M(X) [GeV]");
     h_Xm -> Sumw2();
 
     h_Xy = (TH1F*)h_y->Clone("h_Xy");
     h_Xy->SetXTitle("Rapidity of X");
+
+    h_cosThetaStar = (TH1F*)h_cos->Clone("h_cosThetaStar");
+    h_cosThetaStar -> SetXTitle("cos#theta^{*}");
+    h_cosThetaStar -> SetTitle("Cosine of the scattering angle in the rest frame of the X resonance");
+
+    h_cosPhi       = (TH1F*)h_cos->Clone("h_cosPhi");
+    h_cosPhi       -> SetXTitle("cos#Phi");
+    h_cosPhi       -> SetTitle("Cosine of the angle between the decay planes");
 
     for(int i=0; i <2; i++)
       {
@@ -101,6 +113,10 @@ public:
 
 	h_D_dR[i] =(TH1F*)h_dR->Clone(Form("h_D_dR%d",i));
 	h_D_dR[i]->SetXTitle(Form("#Delta R between the Daughters of Boson %d",i));
+
+	h_cosTheta[i] =(TH1F*)h_cos->Clone(Form("h_cosTheta%d",i));
+	h_cosTheta[i]->SetXTitle(Form("cos#theta_{%d}",i));
+	h_cosTheta[i]->SetTitle(Form("Cosine of the scattering angle in the rest frame of Boson %d",i));
 
 	for(int j=0; j<2; j++)
 	  {
@@ -161,14 +177,43 @@ private:
     TLorentzVector l4_d[2][2];
     TLorentzVector l4_X;
     TLorentzVector l4_B[2];
+    TVector3 normal_l3[2];
     for(int i=0;i<2;i++)
-      for(int j=0;j<2;j++)
-	{
-	  l4_d[i][j]=l4_vector[2*i+j];
-	  l4_X += l4_d[i][j];
-	  l4_B[i] += l4_d[i][j];
+      {
+	for(int j=0;j<2;j++)
+	  {
+	    l4_d[i][j]=l4_vector[2*i+j];
+	    l4_X += l4_d[i][j];
+	    l4_B[i] += l4_d[i][j];
 	    
-	}
+	  }
+	normal_l3[i] = l4_d[i][0].Vect().Cross( l4_d[i][1].Vect() );
+      }
+    double cosphi= TMath::Cos(normal_l3[0].Angle(normal_l3[1]));
+    h_cosPhi->Fill(cosphi);
+
+    TLorentzVector l4boost_B[2];
+    TLorentzVector l4boost_d[2][2];
+
+    double costheta[2]={-99999,-99999};
+
+    for(int i=0;i<2;i++)
+      {
+	l4boost_B[i]=l4_B[i];
+	l4boost_B[i].Boost(-l4_X.BoostVector());
+	for(int j=0;j<2;j++)
+	  {
+	    l4boost_d[i][j] = l4_d[i][j];
+	    l4boost_d[i][j].Boost(-l4_B[i].BoostVector());
+	  }
+	
+	costheta[i] = TMath::Cos(l4boost_d[i][0].Vect().Angle(l4_B[i].Vect()));
+	h_cosTheta[i]->Fill(costheta[i]);
+      }
+
+    double costhetastar = TMath::Cos(l4boost_B[0].Vect().Angle(l4_X.Vect()));
+    h_cosThetaStar->Fill(costhetastar);
+    
 
     h_Xpt->Fill(l4_X.Pt());
     h_Xpz->Fill(l4_X.Pz());
@@ -198,6 +243,8 @@ private:
     h_Xpz->Write();
     h_Xm->Write();
     h_Xy->Write();
+    h_cosThetaStar->Write();
+    h_cosPhi->Write();
 
     for(int i=0; i<2; i++){
       h_Bpt[i]->Write();
@@ -205,6 +252,7 @@ private:
       h_Bm[i]->Write();
       h_By[i]->Write();
       h_D_dR[i]->Write();
+      h_cosTheta[i]->Write();
 
       for(int j=0; j<2; j++){
 	h_Dpt[i][j]->Write();
