@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 # link to cards:
-# https://github.com/cms-sw/genproductions/tree/master/bin/MadGraph5_aMCatNLO/cards/production/13TeV/exo_diboson/Spin-2/BulkGraviton_hh_haahbb/BulkGraviton_hh_haahbb_narrow_M900
+# https://github.com/cms-sw/genproductions/tree/5433e79367a9573b24d268f207a638922ba1e19b/bin/MadGraph5_aMCatNLO/cards/production/13TeV/exo_diboson/Spin-2/BulkGraviton_hh_haahbb/BulkGraviton_hh_haahbb_narrow_M900
 
 
 externalLHEProducer = cms.EDProducer("ExternalLHEProducer",
