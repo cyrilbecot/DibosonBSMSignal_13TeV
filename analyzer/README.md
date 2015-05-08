@@ -9,20 +9,10 @@ How to use the LHE analyzer
 
   git cms-addpkg GeneratorInterface/LHEInterface
 
-// you will be asked to Enter passphrase for key several times
-
-  git clone git@github.com:syuvivida/DibosonBSMSignal_13TeV.git DibosonBSMSignal_13TeV
-
-  mv DibosonBSMSignal_13TeV/analyzer/DummyLHEAnalyzer.cc GeneratorInterface/LHEInterface/test/.
-
-  mv DibosonBSMSignal_13TeV/analyzer/dumpLHE*.py .  
-
-  rm -rf DibosonBSMSignal_13TeV
-
-  cmsenv
+  git cms-merge-topic syuvivida:7114_diboson_lhereader
 
   scramv1 b
 
  3. To run,
 
-cmsRun dumpLHE_cfg.py inputFiles="file:xxx.lhe" outputFile="test.root" maxEvents=-1
+cmsRun GeneratorInterface/LHEInterface/test/dumpLHE_cfg.py inputFiles="file:xxx.lhe" outputFile="test.root" maxEvents=-1
