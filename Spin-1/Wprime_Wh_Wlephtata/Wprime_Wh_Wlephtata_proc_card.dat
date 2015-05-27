@@ -12,4 +12,4 @@ define vw = w+ w-
 define lep = l+ l-
 define neu = vl vl~
 generate p p > vc, (vc > h vw, h > ta+ ta-, vw > lep neu)
-output Wprime_Wh_Wlephbb
+output Wprime_Wh_Wlephtata

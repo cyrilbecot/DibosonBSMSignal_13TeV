@@ -7,4 +7,4 @@ define q = u c d s b u~ c~ d~ s~ b~
 define vc = vc+ vc-
 define vw = w+ w-
 generate p p > vc, (vc > h vw, h > ta+ ta-, vw > q q)
-output Wprime_Wh_Whadhbb
+output Wprime_Wh_Whadhtata
