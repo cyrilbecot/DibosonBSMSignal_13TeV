@@ -1,11 +1,11 @@
 import FWCore.ParameterSet.Config as cms
 
 # link to cards:
-# https://github.com/cms-sw/genproductions/tree/5433e79367a9573b24d268f207a638922ba1e19b/bin/MadGraph5_aMCatNLO/cards/production/13TeV/exo_diboson/Spin-2/BulkGraviton_hh_haahbb/BulkGraviton_hh_haahbb_narrow_M600
+# https://github.com/cms-sw/genproductions/tree/31b6e7510443b74e0f9aac870e4eb9ae30c19d65/bin/MadGraph5_aMCatNLO/cards/production/13TeV/exo_diboson/Spin-2/BulkGraviton_hh_haahbb/BulkGraviton_hh_haahbb_narrow_M600
 
 
 externalLHEProducer = cms.EDProducer("ExternalLHEProducer",
-    args = cms.vstring('/cvmfs/cms.cern.ch/phys_generator/gridpacks/slc6_amd64_gcc481/13TeV/madgraph/V5_2.2.2/exo_diboson/Spin-2/BulkGraviton_hh_haahbb/narrow/v1/BulkGraviton_hh_haahbb_narrow_M600_tarball.tar.xz'),
+    args = cms.vstring('/cvmfs/cms.cern.ch/phys_generator/gridpacks/slc6_amd64_gcc481/13TeV/madgraph/V5_2.2.2/exo_diboson/Spin-2/BulkGraviton_hh_haahbb/narrow/v3/BulkGraviton_hh_haahbb_narrow_M600_tarball.tar.xz'),
     nEvents = cms.untracked.uint32(5000),
     numberOfParameters = cms.uint32(1),
     outputFile = cms.string('cmsgrid_final.lhe'),
