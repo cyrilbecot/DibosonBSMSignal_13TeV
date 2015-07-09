@@ -24,4 +24,4 @@ https://github.com/syuvivida/DibosonBSMSignal_13TeV/blob/master/gridpack_folder/
 
 5) run the script
 
-./card_generation.sh Zprime_Zh_Zlephbb mass_points HVT_narrowWidth_customizecards.dat
+./scripts/card_generation.sh Zprime_Zh_Zlephbb mass_files/mass_points HVT_narrowWidth_customizecards.dat
