@@ -1,12 +1,22 @@
 #!/bin/bash
 
 scriptname=`basename $0`
-EXPECTED_ARGS=3
-if [ $# -ne $EXPECTED_ARGS ]
+EXPECTED_ARGS=5
+MIN_ARGS=3
+factor=-1
+widthName="narrow"
+if [ $# -eq $MIN_ARGS ]
 then
-echo "Usage: $scriptname processName massInputFile customizationInputFile"
-echo "Example: ./$scriptname Zprime_Zh_Zlephbb mass_points HVT_narrowWidth_customizecards.dat"
-exit 1
+    echo "Use default width for the signal 0.001 GeV or natural width"
+else if [ $# -ne $EXPECTED_ARGS ]
+then
+    echo "Usage: $scriptname processName massInputFile customizationInputFile factor cardString"
+    echo "Example: ./scripts/$scriptname Zprime_Zh_Zlephbb mass_files/mass_points HVT_customizecards.dat 0.05 medium"
+    exit 1
+else
+    factor=$4
+    widthName=$5
+fi
 fi
 
 # name of the run
@@ -17,7 +27,6 @@ massInput=$2
 
 ## customercards
 custom=$3
-
 
 export PRODHOME=`pwd`
 CARDSDIR=${PRODHOME}/cards
@@ -62,12 +71,23 @@ while [ $iteration -lt $lastfile ];
 do
   iteration=$(( iteration + 1 ))
   mass=(`head -n $iteration $massInput  | tail -1`)
+  comp=`bc <<< $factor"<=0"`
+  if [ $comp -eq 1 ]
+  then
+      width=0.001
+  else
+      width=`echo "$factor*$mass" | bc -ql | head -c 9`
+  fi
+  echo ""
   echo "Producing cards for X mass = "$mass" GeV"
-  newname=${name}_narrow_M${mass}
+  echo "Producing signal width = "$width" GeV "
+  echo "NOTE: If default HVT model is used, natural width is generated."
+  echo ""
+  newname=${name}_${widthName}_M${mass}
   mkdir $topdir/$newname
   dir=$CARDSDIR/$name/$newname
   sed -e 's/'$name'/'${newname}' -nojpeg\n/g' $CARDSDIR/${name}_proc_card.dat > $dir/${newname}_proc_card.dat
-  sed 's/MASS/'$mass'/g' $CARDSDIR/$custom > $dir/${newname}_customizecards.dat
+  sed -e 's/MASS/'$mass'/g' -e 's/WIDTH/'$width'/g' $CARDSDIR/$custom > $dir/${newname}_customizecards.dat
   cp $CARDSDIR/run_card.dat $dir/${newname}_run_card.dat
 done
 
