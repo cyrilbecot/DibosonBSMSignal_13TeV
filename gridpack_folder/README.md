@@ -10,9 +10,11 @@ To produce gridpack cards of multiple mass points, do the following:
 
 2) prepare a customization card to set the mass and width, 
 like this one:
-https://github.com/syuvivida/DibosonBSMSignal_13TeV/blob/master/gridpack_folder/cards/BulkG_narrowWidth_customizecards.dat
+https://github.com/syuvivida/DibosonBSMSignal_13TeV/blob/master/gridpack_folder/cards/BulkG_customizecards.dat
 
 Leave the line "set param_card mass 39 MASS" unchanged. The script card_generation.sh will replace this variable "MASS" with numbers. Note, for the HVT models, you need to modify the rhoinput block as well when you change the mass.
+
+Also leave the line "set param_card decay 39 DECAY" unchanged.
 
 3) put these cards in the "cards" directory
 
@@ -22,6 +24,13 @@ generate
 like this one:
 https://github.com/syuvivida/DibosonBSMSignal_13TeV/blob/master/gridpack_folder/mass_points
 
-5) run the script
+5) run the script 
 
-./scripts/card_generation.sh Zprime_Zh_Zlephbb mass_files/mass_points HVT_narrowWidth_customizecards.dat
+a) if you want to generate a narrow width 0.001 GeV for the signal
+
+./scripts/card_generation.sh Zprime_Zh_Zlephbb mass_files/mass_points HVT_customizecards.dat
+
+b) if you want to generate a wider width for the signal, say 5% of the mass
+
+./scripts/card_generation.sh Zprime_Zh_Zlephbb mass_files/mass_points HVT_customizecards.dat 0.05 medium
+
