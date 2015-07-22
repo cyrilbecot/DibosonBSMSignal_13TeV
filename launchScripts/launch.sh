@@ -59,7 +59,7 @@ do
   echo "NOTE: If default HVT model is used, natural width is generated."
   echo ""
   newname=${name}_${widthName}_M${mass}
-  sed -e 's/MASS/'$mass'/g' -e 's/WIDTH/'$width'/g' $CARDSDIR/${name}_proc_card.dat > $CARDSDIR/${newname}_proc_card.dat
+  sed -e 's/FOLDERNAME/'$newname'/g' -e 's/MASS/'$mass'/g' -e 's/WIDTH/'$width'/g' $CARDSDIR/${name}_proc_card.dat > $CARDSDIR/${newname}_proc_card.dat
   bsub -q8nh $PWD/runLaunch.sh $PWD $CARDSDIR/${newname}_proc_card.dat
 done
 
