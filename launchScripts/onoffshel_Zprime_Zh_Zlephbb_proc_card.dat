@@ -6,7 +6,7 @@ import model Vector_Triplet_free_Width_UFO
 set complex_mass_scheme True
 define l+ = e+ mu+ ta+
 define l- = e- mu- ta-
-generate p p > h z $ zp > b b~ l+ l-
+generate p p > h z > b b~ l+ l-
 output FOLDERNAME -nojpeg
 launch FOLDERNAME
        set MVz MASS
