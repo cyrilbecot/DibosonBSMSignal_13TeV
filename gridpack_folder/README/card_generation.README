@@ -22,7 +22,7 @@ Also leave the line "set param_card decay 39 DECAY" unchanged.
 generate 
 
 like this one:
-https://github.com/syuvivida/DibosonBSMSignal_13TeV/blob/master/gridpack_folder/mass_points
+https://github.com/syuvivida/DibosonBSMSignal_13TeV/blob/master/gridpack_folder/mass_files/mass_points
 
 5) run the script 
 
