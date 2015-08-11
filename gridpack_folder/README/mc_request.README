@@ -95,7 +95,7 @@ https://twiki.cern.ch/twiki/bin/view/Main/ExoMCInstructions
 
  12) put the "out" file from 1) in the src directory
  
-     awk ‘{print “mkdir “$1}’ out | bash
+     awk '{print “mkdir “$1}' out | bash
     
      foreach file(RS*)
     
