@@ -44,7 +44,12 @@ curl https://raw.githubusercontent.com/syuvivida/DibosonBSMSignal_13TeV/master/g
 
 5)  awk '{print "./replace.bash "$1" 2 v1"}' out | bash
  
-Then, a folder of configuration file is created
+ Note, if you are creating gridpacks for a different decay mode, you need 
+ to use different input arguments for the script replace.bash.
+
+ Run "./replace.bash" to find out what the input arguments are.
+
+ A folder of configuration file with a name of your process is created.
 
 6) Make a pull request of your LHEProducer configuration files here: 
 
@@ -147,5 +152,7 @@ cmsDriver.py Configuration/GenProduction/python/ThirteenTeV/Hadronizer_TuneCUETP
  Prafulla Behera <prafulla.behera@cern.ch>
 
 15) Send emails to these contacts (including Andreas Hinzmann, Eiko, and Alexandra Carvalho in cc)
- and make your request.
+ and make your request. You should tell them where your LHEProducer config tar ball is.
+
+
  
