@@ -16,7 +16,9 @@ To produce LHE producer configuraiton file (here I use RS->hh->tatabb as an exam
  
 cd genproduction/bin/MadGraph5_aMCatNLO/cards/production/13TeV/exo_diboson/Spin-2/RSGraviton_hh_htatahbb
 
- ls | awk '{print $9}' | grep -a RS | sort -g -k2 --field-separator=M >> out
+alias ls 'ls -lrt'
+
+ls | awk '{print $9}' | grep -a RS | sort -g -k2 --field-separator=M >> out
  
 2) download and modify
 
