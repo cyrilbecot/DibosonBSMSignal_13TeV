@@ -22,7 +22,7 @@ ls | awk '{print $9}' | grep -a RS | sort -g -k2 --field-separator=M >> out
  
 2) download and modify
 
-curl https://github.com/syuvivida/DibosonBSMSignal_13TeV/blob/master/gridpack_folder/mc_request/template_cff.py -o template_cff.py
+curl https://raw.githubusercontent.com/syuvivida/DibosonBSMSignal_13TeV/master/gridpack_folder/mc_request/template_cff.py -o template_cff.py
 
 Change 3416cb09b257642b1355134d78814c249a8e1139 to 4c3450c12f24f5c30af63edcfe42ecd45ced9470
 
@@ -36,7 +36,9 @@ go to the subfolder of your decay mode, click on "latest commit". The numbers an
 
 3) download the following file to same area where you download template_cff.py
 
-curl https://github.com/syuvivida/DibosonBSMSignal_13TeV/blob/master/gridpack_folder/scripts/replace.bash -o replace.bash
+curl https://raw.githubusercontent.com/syuvivida/DibosonBSMSignal_13TeV/master/gridpack_folder/scripts/replace.bash -o replace.bash
+
+ chmod 755 replace.bash
  
 4) Put the file "out" from 1) in the same area
 
@@ -102,6 +104,11 @@ cmsDriver.py Configuration/GenProduction/python/ThirteenTeV/Hadronizer_TuneCUETP
  13)
     then, you could submit job to the batch system for step0 first. Once step0 is finished, run step1
    
+    curl https://raw.githubusercontent.com/syuvivida/DibosonBSMSignal_13TeV/master/gridpack_folder/scripts/runStep0.csh -o runStep0.csh
+
+    curl https://raw.githubusercontent.com/syuvivida/DibosonBSMSignal_13TeV/master/gridpack_folder/scripts/runStep1.csh -o runStep1.csh
+   
+    chmod 755 *sh
 
     foreach file(RS*)
     cd $file
