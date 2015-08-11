@@ -1,6 +1,6 @@
-# This file was automatically created by FeynRules 1.6.13
-# Mathematica version: 8.0 for Linux x86 (32-bit) (October 10, 2011)
-# Date: Tue 12 Nov 2013 18:05:55
+# This file was automatically created by FeynRules $Revision: 634 $
+# Mathematica version: 7.0 for Mac OS X x86 (64-bit) (November 11, 2008)
+# Date: Tue 22 Nov 2011 16:45:55
 
 
 
@@ -36,7 +36,7 @@ aEWM1 = Parameter(name = 'aEWM1',
 Gf = Parameter(name = 'Gf',
                nature = 'external',
                type = 'real',
-               value = 0.00001166378,
+               value = 0.00001166,
                texname = '\\text{Gf}',
                lhablock = 'SMINPUTS',
                lhacode = [ 2 ])
@@ -89,45 +89,13 @@ LRS = Parameter(name = 'LRS',
                 lhablock = 'FRBlock',
                 lhacode = [ 1 ])
 
-ktilda = Parameter(name = 'ktilda',
-                   nature = 'external',
-                   type = 'real',
-                   value = 0.1,
-                   texname = '\\text{ktilda}',
-                   lhablock = 'FRBlock',
-                   lhacode = [ 2 ])
-
-clight = Parameter(name = 'clight',
-                   nature = 'external',
-                   type = 'real',
-                   value = 0.0001,
-                   texname = '\\text{clight}',
-                   lhablock = 'FRBlock',
-                   lhacode = [ 3 ])
-
-ctop = Parameter(name = 'ctop',
-                 nature = 'external',
-                 type = 'real',
-                 value = 1.,
-                 texname = '\\text{ctop}',
-                 lhablock = 'FRBlock',
-                 lhacode = [ 4 ])
-
-cg = Parameter(name = 'cg',
-               nature = 'external',
-               type = 'real',
-               value = 0.0137,
-               texname = '\\text{cg}',
-               lhablock = 'FRBlock',
-               lhacode = [ 5 ])
-
 sw2 = Parameter(name = 'sw2',
                 nature = 'external',
                 type = 'real',
                 value = 0.2312,
                 texname = '\\text{sw2}',
                 lhablock = 'FRBlock',
-                lhacode = [ 6 ])
+                lhacode = [ 2 ])
 
 MTA = Parameter(name = 'MTA',
                 nature = 'external',
@@ -172,7 +140,7 @@ MZ = Parameter(name = 'MZ',
 MW = Parameter(name = 'MW',
                nature = 'external',
                type = 'real',
-               value = 80.385,    
+               value = 80.385,
                texname = '\\text{MW}',
                lhablock = 'MASS',
                lhacode = [ 24 ])
@@ -196,7 +164,7 @@ MGr = Parameter(name = 'MGr',
 WT = Parameter(name = 'WT',
                nature = 'external',
                type = 'real',
-               value = 1.491500, 
+               value = 1.491500,
                texname = '\\text{WT}',
                lhablock = 'DECAY',
                lhacode = [ 6 ])
@@ -204,7 +172,7 @@ WT = Parameter(name = 'WT',
 WZ = Parameter(name = 'WZ',
                nature = 'external',
                type = 'real',
-               value = 2.4952,    
+               value = 2.4952,
                texname = '\\text{WZ}',
                lhablock = 'DECAY',
                lhacode = [ 23 ])
@@ -212,7 +180,7 @@ WZ = Parameter(name = 'WZ',
 WW = Parameter(name = 'WW',
                nature = 'external',
                type = 'real',
-               value = 2.085,    
+               value = 2.085,
                texname = '\\text{WW}',
                lhablock = 'DECAY',
                lhacode = [ 24 ])
@@ -220,7 +188,7 @@ WW = Parameter(name = 'WW',
 WH = Parameter(name = 'WH',
                nature = 'external',
                type = 'real',
-               value = 0.006382339,
+               value =  6.38233934e-03,
                texname = '\\text{WH}',
                lhablock = 'DECAY',
                lhacode = [ 25 ])
@@ -274,24 +242,6 @@ yu = Parameter(name = 'yu',
                type = 'real',
                value = '0',
                texname = '\\text{yu}')
-
-cu = Parameter(name = 'cu',
-               nature = 'internal',
-               type = 'real',
-               value = 'clight',
-               texname = '\\text{cu}')
-
-cc = Parameter(name = 'cc',
-               nature = 'internal',
-               type = 'real',
-               value = 'clight',
-               texname = '\\text{cc}')
-
-cf3 = Parameter(name = 'cf3',
-                nature = 'internal',
-                type = 'real',
-                value = 'ctop',
-                texname = '\\text{cf3}')
 
 yd = Parameter(name = 'yd',
                nature = 'internal',
@@ -362,8 +312,8 @@ CKM33 = Parameter(name = 'CKM33',
 kappa = Parameter(name = 'kappa',
                   nature = 'internal',
                   type = 'real',
-                  value = '(3.83*ktilda)/MGr',
-                  texname = '\\text{$\\kappa \\_$F}')
+                  value = '2/LRS',
+                  texname = '\\kappa ')
 
 ee = Parameter(name = 'ee',
                nature = 'internal',
@@ -393,7 +343,7 @@ lam = Parameter(name = 'lam',
                 nature = 'internal',
                 type = 'real',
                 value = 'MH**2/(2.*v**2)',
-                texname = '\\lambda')
+                texname = '\\lambda ')
 
 yb = Parameter(name = 'yb',
                nature = 'internal',
@@ -423,10 +373,5 @@ muH = Parameter(name = 'muH',
                 nature = 'internal',
                 type = 'real',
                 value = 'cmath.sqrt(lam*v**2)',
-                texname = '\\mu')
+                texname = '\\mu ')
 
-AH = Parameter(name = 'AH',
-               nature = 'internal',
-               type = 'real',
-               value = '(47*ee**2*(1 - (2*MH**4)/(987.*MT**4) - (14*MH**2)/(705.*MT**2) + (213*MH**12)/(2.634632e7*MW**12) + (5*MH**10)/(119756.*MW**10) + (41*MH**8)/(180950.*MW**8) + (87*MH**6)/(65800.*MW**6) + (57*MH**4)/(6580.*MW**4) + (33*MH**2)/(470.*MW**2)))/(72.*cmath.pi**2*v)',
-               texname = 'A_H')

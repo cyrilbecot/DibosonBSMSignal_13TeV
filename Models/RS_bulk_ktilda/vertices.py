@@ -567,9 +567,15 @@ V_93 = Vertex(name = 'V_93',
               lorentz = [ L.FFV2 ],
               couplings = {(0,0):C.GC_42})
 
-V_94 = Vertex(name = 'V_2',
+V_94 = Vertex(name = 'V_94',
              particles = [ P.A, P.A, P.H ],
              color = [ '1' ],
              lorentz = [ L.VVS3 ],
              couplings = {(0,0):C.GC_1})
+
+V_95 = Vertex(name = 'V_95',
+              particles = [ P.G, P.G, P.H ],
+              color = [ '1' ],
+              lorentz = [ L.VVS3 ],
+              couplings = {(0,0):C.GC_1})
 

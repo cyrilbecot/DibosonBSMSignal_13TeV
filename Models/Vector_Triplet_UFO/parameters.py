@@ -1,6 +1,6 @@
 # This file was automatically created by FeynRules 1.7.178
-# Mathematica version: 9.0 for Mac OS X x86 (64-bit) (November 20, 2012)
-# Date: Sun 26 Jan 2014 12:11:59
+# Mathematica version: 9.0 for Mac OS X x86 (64-bit) (January 24, 2013)
+# Date: Thu 17 Jul 2014 17:34:00
 
 
 
@@ -245,7 +245,7 @@ MZ = Parameter(name = 'MZ',
                nature = 'external',
                type = 'real',
                value = 91.1876,
-               texname = 'M_Z',
+               texname = '\\text{MZ}',
                lhablock = 'MASS',
                lhacode = [ 23 ])
 
@@ -280,22 +280,6 @@ WW = Parameter(name = 'WW',
                texname = '\\text{WW}',
                lhablock = 'DECAY',
                lhacode = [ 24 ])
-
-WVc = Parameter(name = 'WVc',
-                nature = 'external',
-                type = 'real',
-                value = 10,
-                texname = '\\gamma _{V^+}',
-               lhablock = 'DECAY',
-               lhacode = [ 9000002 ])
-
-WVz = Parameter(name = 'WVz',
-                nature = 'external',
-                type = 'real',
-                value = 10,
-                texname = '\\gamma _{V^0}',
-               lhablock = 'DECAY',
-               lhacode = [ 9000001 ])
 
 aEW = Parameter(name = 'aEW',
                 nature = 'internal',
@@ -471,26 +455,15 @@ sN = Parameter(name = 'sN',
                value = 'cmath.sin(thN)',
                texname = 's_N')
 
-sw2 = Parameter(name = 'sw2',
+WVc = Parameter(name = 'WVc',
                 nature = 'internal',
                 type = 'real',
-                value = '1 - MW**2/MZ**2',
-                texname = '\\text{sw2}')
+                value = '((MVc**4 + (MW**2 - MZ**2)**2 - 2*MVc**2*(MW**2 + MZ**2))**1.5*(cC**4*gw**2*(MVc**4 + 2*MW**2*MZ**2 + 6*cvvw*MW**2*MZ**2 + MZ**4 + 2*MVc**2*((1 + 3*cvvw + cvvw**2)*MW**2 + 5*MZ**2) + cvvw**2*(MW**4 + 2*MW**2*MZ**2))*sN**2 + gw**2*(MW**4 + 10*MW**2*MZ**2 + MZ**4 + 2*MVc**2*(MW**2 + MZ**2) + 6*cvvw*MVc**2*(MW**2 + MZ**2) + cvvw**2*MVc**2*(MVc**2 + 2*(MW**2 + MZ**2)))*sC**4*sN**2 + 2*cC**3*gw*sC*sN*(cN*(-1 + cvvw)*cwt*gw*MZ**2*(5*MVc**2 + (2 + 3*cvvw)*MW**2 + MZ**2) + cvvv*gst*(MVc**4 + 5*MW**2*MZ**2 + MZ**4 + 5*MVc**2*((1 + cvvw)*MW**2 + 2*MZ**2) + cvvw*(MW**4 + 5*MW**2*MZ**2))*sN) - 2*cC*gw*sC**3*sN*(cN*(-1 + cvvw)*cwt*gw*MZ**2*((2 + 3*cvvw)*MVc**2 + 5*MW**2 + MZ**2) + cvvv*gst*(MW**4 + 10*MW**2*MZ**2 + MZ**4 + 5*MVc**2*(MW**2 + MZ**2) + cvvw*MVc**2*(MVc**2 + 5*(MW**2 + MZ**2)))*sN) + cC**2*sC**2*(cN**2*(-1 + cvvw)**2*cwt**2*gw**2*MZ**2*(2*MVc**2 + 2*MW**2 + MZ**2) + 2*cN*cvvv*(-1 + cvvw)*cwt*gst*gw*MZ**2*(5*MVc**2 + 5*MW**2 + MZ**2)*sN + (cvvv**2*gst**2*(MVc**4 + MW**4 + 10*MW**2*MZ**2 + MZ**4 + 10*MVc**2*(MW**2 + MZ**2)) - 2*gw**2*(3*cvvw**2*MVc**2*MW**2 + 5*MW**2*MZ**2 + MZ**4 + MVc**2*(3*MW**2 + 5*MZ**2) + cvvw*(MVc**4 + MW**4 + 5*MW**2*MZ**2 + MVc**2*(4*MW**2 + 5*MZ**2))))*sN**2)))/(192.*cmath.pi*MVc**5*MW**2*MZ**2) + (MVc*(ee*gst*sC + cC*cl*gw**2*swt)**2)/(16.*cmath.pi*gst**2*swt**2) + (CKM1x1**2*MVc*(ee*gst*sC + cC*cq*gw**2*swt)**2)/(8.*cmath.pi*gst**2*swt**2) + (CKM1x2**2*MVc*(ee*gst*sC + cC*cq*gw**2*swt)**2)/(8.*cmath.pi*gst**2*swt**2) - ((MB**4 + MT**4 + MT**2*MVc**2 - 2*MVc**4 + MB**2*(-2*MT**2 + MVc**2))*(ee*gst*sC + c3*cC*gw**2*swt)**2*cmath.sqrt(MB**4 + (MT**2 - MVc**2)**2 - 2*MB**2*(MT**2 + MVc**2)))/(32.*cmath.pi*gst**2*MVc**5*swt**2) + ((MH**4 + MVc**4 + 10*MVc**2*MW**2 + MW**4 - 2*MH**2*(MVc**2 + MW**2))*(4*aa*cC*MWt**2*sC + gst*(cC**2*ch*gw - 4*cC*cvvhh*gst*sC - ch*gw*sC**2)*vv**2)**2*cmath.sqrt(MH**4 + (MVc**2 - MW**2)**2 - 2*MH**2*(MVc**2 + MW**2)))/(768.*cmath.pi*MVc**5*MW**2*vv**2)',
+                texname = '\\gamma _{V^+}')
 
-sw = Parameter(name = 'sw',
-               nature = 'internal',
-               type = 'real',
-               value = 'cmath.sqrt(sw2)',
-               texname = 's_w')
+WVz = Parameter(name = 'WVz',
+                nature = 'internal',
+                type = 'real',
+                value = '(MVz*(cwt**2*ee*gst*sN + cl*cN*cwt*gw**2*swt + ee*gst*sN*swt**2)**2)/(32.*cwt**2*cmath.pi*gst**2*swt**2) + (MVz*(cwt**4*ee**2*gst**2*sN**2 + 2*cl*cN*cwt**3*ee*gst*gw**2*sN*swt + cwt**2*(cl**2*cN**2*gw**4 - 2*ee**2*gst**2*sN**2)*swt**2 - 2*cl*cN*cwt*ee*gst*gw**2*sN*swt**3 + 5*ee**2*gst**2*sN**2*swt**4))/(32.*cwt**2*cmath.pi*gst**2*swt**2) + (MVz*(9*cwt**4*ee**2*gst**2*sN**2 + 18*cN*cq*cwt**3*ee*gst*gw**2*sN*swt + 3*cwt**2*(3*cN**2*cq**2*gw**4 + 2*ee**2*gst**2*sN**2)*swt**2 + 6*cN*cq*cwt*ee*gst*gw**2*sN*swt**3 + 5*ee**2*gst**2*sN**2*swt**4))/(144.*cwt**2*cmath.pi*gst**2*swt**2) + (MVz*(9*cwt**4*ee**2*gst**2*sN**2 + 18*cN*cq*cwt**3*ee*gst*gw**2*sN*swt + 3*cwt**2*(3*cN**2*cq**2*gw**4 - 2*ee**2*gst**2*sN**2)*swt**2 - 6*cN*cq*cwt*ee*gst*gw**2*sN*swt**3 + 17*ee**2*gst**2*sN**2*swt**4))/(144.*cwt**2*cmath.pi*gst**2*swt**2) + ((9*cwt**4*ee**2*gst**2*(-MB**2 + MVz**2)*sN**2 - 18*c3*cN*cwt**3*ee*gst*gw**2*(MB**2 - MVz**2)*sN*swt + 3*cwt**2*(3*c3**2*cN**2*gw**4*(-MB**2 + MVz**2) + 2*ee**2*gst**2*(-7*MB**2 + MVz**2)*sN**2)*swt**2 + 6*c3*cN*cwt*ee*gst*gw**2*(-7*MB**2 + MVz**2)*sN*swt**3 + ee**2*gst**2*(-17*MB**2 + 5*MVz**2)*sN**2*swt**4)*cmath.sqrt(-4*MB**2*MVz**2 + MVz**4))/(288.*cwt**2*cmath.pi*gst**2*MVz**3*swt**2) + ((9*cwt**4*ee**2*gst**2*(-MT**2 + MVz**2)*sN**2 - 18*c3*cN*cwt**3*ee*gst*gw**2*(MT**2 - MVz**2)*sN*swt - 3*cwt**2*(3*c3**2*cN**2*gw**4*(MT**2 - MVz**2) + 2*ee**2*gst**2*(11*MT**2 + MVz**2)*sN**2)*swt**2 - 6*c3*cN*cwt*ee*gst*gw**2*(11*MT**2 + MVz**2)*sN*swt**3 + ee**2*gst**2*(7*MT**2 + 17*MVz**2)*sN**2*swt**4)*cmath.sqrt(-4*MT**2*MVz**2 + MVz**4))/(288.*cwt**2*cmath.pi*gst**2*MVz**3*swt**2) + ((MVz - 2*MW)*(MVz + 2*MW)*(-4*cC**3*cN*cwt*gw**2*(MVz**4 + 5*(3 + cvvw)*MVz**2*MW**2 + 6*(1 + cvvw)*MW**4)*sC*sN + cC**4*cwt**2*gw**2*(MVz**4 + 20*MVz**2*MW**2 + 12*MW**4)*sN**2 + 4*cC*cN*gw*sC**3*(cN*cvvv*gst*(MVz**4 + 5*(3 + cvvw)*MVz**2*MW**2 + 6*(1 + cvvw)*MW**4) - cwt*gw*(8*MVz**2*MW**2 + 3*cvvw**2*MVz**2*MW**2 + 6*MW**4 + cvvw*(MVz**4 + 9*MVz**2*MW**2 + 6*MW**4))*sN) + 2*cC**2*gw*sC**2*(2*cN**2*gw*(MVz**4 + (11 + 8*cvvw + cvvw**2)*MVz**2*MW**2 + 3*(1 + cvvw)**2*MW**4) - cN*cvvv*cwt*gst*(MVz**4 + 20*MVz**2*MW**2 + 12*MW**4)*sN + cwt**2*gw*(cvvw*MVz**4 + 10*MVz**2*MW**2 + 10*cvvw*MVz**2*MW**2 + 12*MW**4)*sN**2) + sC**4*(cN**2*cvvv**2*gst**2*(MVz**4 + 20*MVz**2*MW**2 + 12*MW**4) - 2*cN*cvvv*cwt*gst*gw*(cvvw*MVz**4 + 10*MVz**2*MW**2 + 10*cvvw*MVz**2*MW**2 + 12*MW**4)*sN + cwt**2*gw**2*(12*cvvw*MVz**2*MW**2 + 4*MW**2*(MVz**2 + 3*MW**2) + cvvw**2*(MVz**4 + 4*MVz**2*MW**2))*sN**2))*cmath.sqrt(MVz**4 - 4*MVz**2*MW**2))/(192.*cmath.pi*MVz**3*MW**4) + ((MH**4 + MVz**4 + 10*MVz**2*MZ**2 + MZ**4 - 2*MH**2*(MVz**2 + MZ**2))*(4*aa*cN*MZt**2*sN + gst*(-4*cN*cvvhh*gst*sN + ch*gz*(cN**2 - sN**2))*vv**2)**2*cmath.sqrt(MH**4 + (MVz**2 - MZ**2)**2 - 2*MH**2*(MVz**2 + MZ**2)))/(768.*cmath.pi*MVz**5*MZ**2*vv**2)',
+                texname = '\\gamma _{V^0}')
 
-v = Parameter(name = 'v',
-              nature = 'internal',
-              type = 'real',
-              value = '(2*MW*sw)/ee',
-              texname = 'v')
-
-AH = Parameter(name = 'AH',
-               nature = 'internal',
-               type = 'real',
-               value = '(47*ee**2*(1 - (2*MH**4)/(987.*MT**4) - (14*MH**2)/(705.*MT**2) + (213*MH**12)/(2.634632e7*MW**12) + (5*MH**10)/(119756.*MW**10) + (41*MH**8)/(180950.*MW**8) + (87*MH**6)/(65800.*MW**6) + (57*MH**4)/(6580.*MW**4) + (33*MH**2)/(470.*MW**2)))/(72.*cmath.pi**2*v)',
-               texname = 'A_H')
