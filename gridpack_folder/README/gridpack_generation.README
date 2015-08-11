@@ -22,7 +22,8 @@ cp -p ../../../DibosonBSMSignal_13TeV/gridpack_folder/mass_files/* .
 ./loop_gridpackProd.sh $PWD RSGraviton_hh_hbbhbb [mass input file] cards/production/13TeV/exo_diboson/Spin-2
 
 
-Note, you need to change the process name and the directory of corresponding spin that suit your process.
+Note, you need to change the process name and the directory of corresponding spin that suit your process. 
+
 
 Option of [mass input file]:
 
@@ -38,4 +39,22 @@ Option of [mass input file]:
  d) You could also create your own mass input files.
 
 
+4) !!! Note, when the gridpacks are done, do a check to make sure 
+ the gridpacks are OK.
+
+ grep -a STOP *log
+
+ cd CMSSW_7_1_17/src
+ cmsenv
+
+ mkdir temp
+ cd temp
+ tar xf [one gridpack name]
+ ./runcmsgrid.sh 10 12312 1
+
+ and see if the output LHE file makes sense (process, mass points).
+
+ You could also use this LHEanalyzer to check the kinematic distributions.
+
+ https://github.com/syuvivida/DibosonBSMSignal_13TeV/tree/master/analyzer 
   
