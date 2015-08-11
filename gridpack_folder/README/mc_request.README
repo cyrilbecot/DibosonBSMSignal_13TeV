@@ -14,7 +14,7 @@ To produce LHE producer configuraiton file (here I use RS->hh->tatabb as an exam
 
 1) go to your original genproduction area (the directory where you produce your gridpacks)
  
-cd genproduction/bin/MadGraph5_aMCatNLO/cards/production/13TeV/exo_diboson/Spin-2/RSGraviton_hh_htatahbb
+cd genproductions/bin/MadGraph5_aMCatNLO/cards/production/13TeV/exo_diboson/Spin-2/RSGraviton_hh_htatahbb
 
 alias ls 'ls -lrt'
 
