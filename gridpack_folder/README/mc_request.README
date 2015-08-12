@@ -115,6 +115,7 @@ cmsDriver.py Configuration/GenProduction/python/ThirteenTeV/Hadronizer_TuneCUETP
     chmod 755 *sh
 
     foreach file(RS*)
+    cp -p runStep*.csh $file/.
     cd $file
     bsub -q8nh $PWD/runStep0.csh $PWD $file
     cd -
