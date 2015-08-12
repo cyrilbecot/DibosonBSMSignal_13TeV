@@ -141,7 +141,7 @@ cmsDriver.py Configuration/GenProduction/python/ThirteenTeV/Hadronizer_TuneCUETP
 
  Exo MC:
  David Nash <dnash@cern.ch>, 
- David Sheffield <david.sheffield@cern.ch>
+ David Sheffield <david.g.sheffield@gmail.com>
 
  For the di-higgs channels with mass below 1 TeV, include Higgs MC contacts as the editor:
 
