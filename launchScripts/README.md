@@ -21,7 +21,7 @@ exit
  If you want to change the run cards, say use a different PDF
  or use different number of events, modify the card
  in
-  interactive/interactive_gridpack/work/MG5_aMC_v2_3_0/Template/LO/Cards/run_card.dat 
+interactive/interactive_gridpack/work/MG5_aMC_v2_2_2/Template/LO/Cards/run_card.dat
 
 3) 
  go back to the directory bin/MadGraph5_aMCatNLO
