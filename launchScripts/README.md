@@ -6,9 +6,6 @@ git clone git@github.com:cms-sw/genproductions.git genproductions
  
 cd genproductions
  
-git checkout mg230
-
-
 cd bin/MadGraph5_aMCatNLO
 
 bash
