@@ -37,7 +37,10 @@ wget https://raw.githubusercontent.com/syuvivida/DibosonBSMSignal_13TeV/master/l
 wget https://raw.githubusercontent.com/syuvivida/DibosonBSMSignal_13TeV/master/launchScripts/Radion_hh_hbbhbb_proc_card.dat
 
 the launch.sh will automatically loop over 13 mass points in
- the mass_point file and generate LHE file for a certain width
+ the mass_points file and generate LHE file for a certain width
+
+ If you don't need so many mass points, just modify the 
+ file mass_points.
  
  launch.sh will submit job to the batch system
  for example, to generate width of 5% of mass mean,
