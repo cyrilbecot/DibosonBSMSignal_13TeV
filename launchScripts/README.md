@@ -49,4 +49,5 @@ the launch.sh will automatically loop over 13 mass points in
  ./launch.sh Radion_hh_hbbhbb mass_points 0.05 medium
  
  
-
+ Once the job is done, the LHE files and results will appear in the directory
+interactive/interactive_gridpack/work/MG5_aMC_v2_2_2/Radion_hh_hbbhbb*
