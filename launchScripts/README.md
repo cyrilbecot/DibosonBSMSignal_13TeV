@@ -33,6 +33,8 @@ wget https://raw.githubusercontent.com/syuvivida/DibosonBSMSignal_13TeV/master/l
 
 wget https://raw.githubusercontent.com/syuvivida/DibosonBSMSignal_13TeV/master/launchScripts/Radion_hh_hbbhbb_proc_card.dat
 
+ chmod 755 *sh
+
 the launch.sh will automatically loop over 13 mass points in
  the mass_points file and generate LHE file for a certain width
 
