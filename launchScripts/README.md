@@ -12,6 +12,8 @@ bash
 
 source gridpack_generation.sh interactive
 
+exit
+
 (a folder "interactive" will be created)
 
 2) 
