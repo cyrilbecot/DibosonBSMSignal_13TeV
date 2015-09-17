@@ -8,132 +8,23 @@ In a few hours, these gridpacks will appear at
 
 /cvmfs/cms.cern.ch/phys_generator/gridpacks/slc6_amd64_gcc481/13TeV/madgraph/V5_2.2.2//exo_diboson/
 
-While waiting for the copying of gridpacks, you could start preparing for the LHEProducer configuration files.
+While waiting for the copying of gridpacks, you could start preparing the google spreadsheet.
+An empty spreadsheet is here:
 
-To produce LHE producer configuraiton file (here I use RS->hh->tatabb as an example):
+https://docs.google.com/spreadsheet/ccc?key=1ScU2IXtgAXSm-vjXBKTGVAzo3j7wcLehwuGawQ35h-0&newcopy
 
-1) go to your original genproduction area (the directory where you produce your gridpacks)
- 
-cd genproductions/bin/MadGraph5_aMCatNLO/cards/production/13TeV/exo_diboson/Spin-2/RSGraviton_hh_htatahbb
+An example spreadsheet is here:
+https://docs.google.com/spreadsheets/d/1MQ0lAfQmHLT6edGBp_seGc1xvWoZ5hgSiHjO27TOmDg/edit#gid=0
 
-alias ls 'ls -lrt'
-
-ls | awk '{print $9}' | grep -a RS | sort -g -k2 --field-separator=M >> out
- 
-2) download and modify
-
-curl https://raw.githubusercontent.com/syuvivida/DibosonBSMSignal_13TeV/master/gridpack_folder/mc_request/template_cff.py -o template_cff.py
-
-Change 3416cb09b257642b1355134d78814c249a8e1139 to 4c3450c12f24f5c30af63edcfe42ecd45ced9470
-
-that corresponds to the latest branch of RS->hh->tata bb
+Note, you need to enter the github link of your input cards.
 
 [If you don't know which one is the latest branch of your decay mode,
 go to https://github.com/cms-sw/genproductions/tree/master/bin/MadGraph5_aMCatNLO/cards/production/13TeV/exo_diboson,
 go to the subfolder of your decay mode, click on "latest commit". The numbers and letters after
 "https://github.com/cms-sw/genproductions/commit/" in the url address is the corresponding latest branch.]
 
-
-3) download the following file to same area where you download template_cff.py
-
-curl https://raw.githubusercontent.com/syuvivida/DibosonBSMSignal_13TeV/master/gridpack_folder/scripts/replace.bash -o replace.bash
-
- chmod 755 replace.bash
- 
-4) Put the file "out" from 1) in the same area
-
-5)  awk '{print "./replace.bash "$1" 2 v1"}' out | bash
- 
- Note, if you are creating gridpacks for a different decay mode, you need 
- to use different input arguments for the script replace.bash.
-
- Run "./replace.bash" to find out what the input arguments are.
-
- A folder of configuration file with a name of your process is created.
-
-6) Make a pull request of your LHEProducer configuration files here: 
-
-https://github.com/syuvivida/DibosonBSMSignal_13TeV/tree/master/gridpack_folder/mc_request/LHEProducer
-
-Also create a tar ball of your LHEProducer configuration files and put them in a public area at lxplus.
-
-
-Then, you need to prepare a google sheet like this one:
-https://docs.google.com/spreadsheets/d/1HeFNNCKmNYZJRYC2Dj8o_CZX1QTJ-9ofRM4VKx35Qho/edit#gid=0
-
-The main thing is now to estimate the amount of time and size for step0 and
-step1.
-
-Take a look of this twiki:
-https://twiki.cern.ch/twiki/bin/view/Main/ExoMCInstructions
-
-
- 7) cmsrel CMSSW_7_1_17
- 
-    cd CMSSW_7_1_17/src/
- 
-    cmsenv
-
- 8)
-    mkdir Configuration
-   
-    mkdir Configuration/GenProduction
-
-    mkdir Configuration/GenProduction/python/
-
-    mkdir Configuration/GenProduction/python/ThirteenTeV/
-
-
- 9) Put your LHEProducer python files in Configuration/GenProduction/python/ThirteenTeV/
-
- 10) curl https://raw.githubusercontent.com/cms-sw/cmssw/CMSSW_7_4_X/Configuration/Generator/python/Hadronizer_TuneCUETP8M1_13TeV_generic_LHE_pythia8_cff.py -o Configuration/GenProduction/python/ThirteenTeV/Hadronizer_TuneCUETP8M1_13TeV_generic_LHE_pythia8_cff.py
-
- 11)
-    at the directory CMSSW_7_1_17/src/
-    cmsenv
-    scramv1 b
-
- 12) put the "out" file from 1) in the src directory
- 
-     awk '{print "mkdir "$1}' out | bash
-    
-     foreach file(RS*)
-    
-     cmsDriver.py Configuration/GenProduction/python/ThirteenTeV/${file}_13TeV-madgraph_cff.py --fileout file:step0_${file}.root --mc --eventcontent LHE --datatier LHE --conditions MCRUN2_71_V1::All --step LHE --python_filename $file/step0_${file}_cfg.py --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n 30
-
-cmsDriver.py Configuration/GenProduction/python/ThirteenTeV/Hadronizer_TuneCUETP8M1_13TeV_generic_LHE_pythia8_cff.py --filein file:step0_${file}.root --fileout file:step1_${file}.root --mc --eventcontent RAWSIM --datatier GEN-SIM --conditions MCRUN2_71_V1::All --step GEN,SIM --python_filename ${file}/step1_${file}_cfg.py --magField 38T_PostLS1 --beamspot NominalCollision2015 --customise SLHCUpgradeSimulations/Configuration/postLS1Customs.customisePostLS1,Configuration/DataProcessing/Utils.addMonitoring --no_exec -n 30
-
-     end
-
- 13)
-    then, you could submit job to the batch system for step0 first. Once step0 is finished, run step1
-   
-    curl https://raw.githubusercontent.com/syuvivida/DibosonBSMSignal_13TeV/master/gridpack_folder/scripts/runStep0.csh -o runStep0.csh
-
-    curl https://raw.githubusercontent.com/syuvivida/DibosonBSMSignal_13TeV/master/gridpack_folder/scripts/runStep1.csh -o runStep1.csh
-   
-    chmod 755 *sh
-
-    foreach file(RS*)
-    cp -p runStep*.csh $file/.
-    cd $file
-    bsub -q8nh $PWD/runStep0.csh $PWD $file
-    cd -
-    end
-
-    foreach file(RS*)
-    cd $file
-    bsub -q8nh $PWD/runStep1.csh $PWD $file
-    cd -
-    end
-
-
- 14) Once you have step0 and step1 xm files,
-
- https://github.com/syuvivida/DibosonBSMSignal_13TeV/tree/master/gridpack_folder/scripts
- 
-    use step0_time.csh, step0_size.csh, step1_time.csh, step1_size.csh
- to estimate the time and size per event.
+ You could find out more information about each column of the google spreadsheet here:
+ https://twiki.cern.ch/twiki/bin/view/Main/ExoMCInstructions#Central_LHE_requests
 
 
   Once you are done with the google spreadsheet, you need to include EXO MC contacts as one of the editors for 
