@@ -1,15 +1,15 @@
 How to use the LHE analyzer
 ======================
 
-  cmsrel CMSSW_7_1_14
+  cmsrel CMSSW_7_1_19
 
-  cd CMSSW_7_1_14/src/
+  cd CMSSW_7_1_19/src/
 
   cmsenv
 
   git cms-addpkg GeneratorInterface/LHEInterface
 
-  git cms-merge-topic syuvivida:7114_diboson_lhereader
+  git cms-merge-topic syuvivida:7119_diboson_lhereader
 
   scramv1 b
 
