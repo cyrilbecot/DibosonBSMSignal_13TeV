@@ -9,11 +9,14 @@ cd DibosonBSMSignal_13TeV/gridpack_folder
 ```
 
 1) prepare process card of the channel of interest, make sure it's 
- a 4-flavor production, i.e. "define p = u c d s u~ c~ d~ s~": definition 
- of proton does not have b quarks.
+ a 4-flavor production, i.e. 
+```
+"define p = u c d s u~ c~ d~ s~": 
+```
+definition of proton does not have b quarks.
 
  If you want to generate 5-flavor mode, you need to change the PDF set in 
- cards/run_card.dat 
+ cards/run_card.dat.
  The PDF set 263400 corresponds to LO 4F PDF sets: NNPDF30_lo_as_0130_nf_4.
 
 2) prepare a customization card to set the mass and width, 
