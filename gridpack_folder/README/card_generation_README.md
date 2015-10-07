@@ -40,7 +40,8 @@ like this one:
 https://github.com/syuvivida/DibosonBSMSignal_13TeV/blob/master/gridpack_folder/mass_files/mass_points
 
 5) run the script under the directory of DibosonBSMSignal_13TeV/gridpack_folder 
-  A folder with the name of your process (like Zprime_Zh_Zlephbb) will appear in the cards directory
+  A folder with the name of your process (like Zprime_Zh_Zlephbb) will appear 
+in the cards directory
 
   a) if you want to generate a narrow width 0.001 GeV for the signal
 
