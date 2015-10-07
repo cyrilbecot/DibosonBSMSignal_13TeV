@@ -73,7 +73,11 @@ git commit -m "xxx"
 
 git push origin master
 ```
- c) at the github page:https://github.com/<your_userID>/DibosonBSMSignal_13TeV,
+ c) at the github page:
+
+```
+ https://github.com/<your_userID>/DibosonBSMSignal_13TeV
+```
 
   click on "Pull Request"
  
