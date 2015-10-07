@@ -18,12 +18,12 @@ cd DibosonBSMSignal_13TeV/gridpack_folder
 
 2) prepare a customization card to set the mass and width, 
 like this one:
-https://github.com/syuvivida/DibosonBSMSignal_13TeV/blob/master/gridpack_folder/cards/BulkG_customizecards.dat
+https://github.com/syuvivida/DibosonBSMSignal_13TeV/blob/master/gridpack_folder/cards/HVT_customizecards.dat
 
-Leave the line "set param_card mass 39 MASS" unchanged. The script card_generation.sh will replace this variable 
-"MASS" with numbers. Note, for the HVT models, you need to modify the rhoinput block as well when you change the mass.
+The script card_generation.sh will replace the variables "MASS" and 
+"WIDTH" with numbers. Note, for the HVT models, you need to modify the 
+rhoinput block as well when you change the mass.
 
-Also leave the line "set param_card decay 39 DECAY" unchanged.
 
 3) put these cards in the "cards" directory
 
