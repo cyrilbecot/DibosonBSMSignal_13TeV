@@ -17,5 +17,5 @@ How to use the LHE analyzer
  3. To run,
 
 ```
-cmsRun GeneratorInterface/LHEInterface/test/dumpLHE_cfg.py inputFiles="file:xxx.lhe" outputFile="test.root" maxEvents=-1
+cmsRun GeneratorInterface/LHEInterface/test/dumpLHE_cfg.py inputFiles="file:xxx.lhe" outputFile="test.root" maxEvents=-1 fgf=False fhh=False
 ```
