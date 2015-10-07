@@ -3,12 +3,14 @@ Once your Madgraph cards are approved by the generator conveners, you could go a
 gridpacks.
 
 1) 
-
+```
 git clone git@github.com:syuvivida/DibosonBSMSignal_13TeV.git
 
 git clone git@github.com:cms-sw/genproductions.git genproductions
-
+```
 2)
+
+```
 cd genproductions/bin/MadGraph5_aMCatNLO
 
 cp -p ../../../DibosonBSMSignal_13TeV/gridpack_folder/scripts/loop_gridpackProd.sh .
@@ -16,11 +18,13 @@ cp -p ../../../DibosonBSMSignal_13TeV/gridpack_folder/scripts/loop_gridpackProd.
 cp -p ../../../DibosonBSMSignal_13TeV/gridpack_folder/scripts/runJob.sh .
 
 cp -p ../../../DibosonBSMSignal_13TeV/gridpack_folder/mass_files/* .
+```
 
 3)
 
+```
 ./loop_gridpackProd.sh $PWD RSGraviton_hh_hbbhbb [mass input file] cards/production/13TeV/exo_diboson/Spin-2
-
+```
 
 Note, you need to change the process name and the directory of corresponding spin that suit your process. 
 
@@ -42,6 +46,7 @@ Option of [mass input file]:
 4) !!! Note, when the gridpacks are done, do a check to make sure 
  the gridpacks are OK.
 
+```
  grep -a STOP *log
 
  cd CMSSW_7_1_17/src
@@ -51,6 +56,7 @@ Option of [mass input file]:
  cd temp
  tar xf [one gridpack name]
  ./runcmsgrid.sh 10 12312 1
+```
 
  and see if the output LHE file makes sense (process, mass points).
 
