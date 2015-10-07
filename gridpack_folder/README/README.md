@@ -9,6 +9,8 @@ The order of producing gridpacks is as follows:
 
 2) Make a pull request in genproduction package
 
+ You need to state the number of events requested in the pull request.
+
 https://github.com/cms-sw/genproductions/tree/master/bin/MadGraph5_aMCatNLO/cards/production/13TeV/exo_diboson
  
  Follow the instruction here to make pull request: 
