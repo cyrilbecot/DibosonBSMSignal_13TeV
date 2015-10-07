@@ -33,6 +33,7 @@ go to the subfolder of your decay mode, click on "latest commit". The numbers an
  Exo MC:
  David Nash <dnash@cern.ch>, 
  David Sheffield <david.g.sheffield@gmail.com>
+ Oscar Gonzalez Lopez <oglez@mail.cern.ch>
 
  For the di-higgs channels with mass below 1 TeV, include Higgs MC contacts as the editor:
 
@@ -43,7 +44,8 @@ go to the subfolder of your decay mode, click on "latest commit". The numbers an
  Prafulla Behera <prafulla.behera@cern.ch>
 
 15) Send emails to these contacts (including Andreas Hinzmann, Eiko, and Alexandra Carvalho in cc)
- and make your request. You should tell them where your LHEProducer config tar ball is.
+ and make your request. 
+
 
 
  
