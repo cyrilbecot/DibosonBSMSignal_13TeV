@@ -26,7 +26,7 @@ cd DibosonBSMSignal_13TeV/gridpack_folder
 like this one:
 https://github.com/syuvivida/DibosonBSMSignal_13TeV/blob/master/gridpack_folder/cards/HVT_customizecards.dat
 
-The script card_generation.sh will replace the variables "MASS" and 
+The script scripts/card_generation.sh will replace the variables "MASS" and 
 "WIDTH" with numbers. Note, for the HVT models, you need to modify the 
 rhoinput block as well when you change the mass.
 
@@ -40,9 +40,6 @@ like this one:
 https://github.com/syuvivida/DibosonBSMSignal_13TeV/blob/master/gridpack_folder/mass_files/mass_points
 
 5) run the script under the directory of DibosonBSMSignal_13TeV/gridpack_folder 
-```
-cd DibosonBSMSignal_13TeV/gridpack_folder
-```
 
   a) if you want to generate a narrow width 0.001 GeV for the signal
 
