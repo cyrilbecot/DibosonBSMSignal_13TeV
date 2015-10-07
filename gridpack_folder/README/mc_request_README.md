@@ -1,4 +1,5 @@
 
+1)
  When you are done with the generation of gridpacks, please inform Eiko. 
 Eiko will copy all your gridpacks to
 
@@ -8,6 +9,7 @@ In a few hours, these gridpacks will appear at
 
 /cvmfs/cms.cern.ch/phys_generator/gridpacks/slc6_amd64_gcc481/13TeV/madgraph/V5_2.2.2//exo_diboson/
 
+2)
 While waiting for the copying of gridpacks, you could start preparing the google spreadsheet.
 An empty spreadsheet is here:
 
@@ -26,25 +28,40 @@ go to the subfolder of your decay mode, click on "latest commit". The numbers an
  You could find out more information about each column of the google spreadsheet here:
  https://twiki.cern.ch/twiki/bin/view/Main/ExoMCInstructions#Central_LHE_requests
 
+3)
 
   Once you are done with the google spreadsheet, you need to include EXO MC contacts as one of the editors for 
  most of the Exo VV channels and the di-higgs channels with mass above 1 TeV (including 1 TeV)
 
  Exo MC:
+```
  David Nash <dnash@cern.ch>, 
- David Sheffield <david.g.sheffield@gmail.com>
+ David Sheffield <david.g.sheffield@gmail.com>,
  Oscar Gonzalez Lopez <oglez@mail.cern.ch>
+```
 
  For the di-higgs channels with mass below 1 TeV, include Higgs MC contacts as the editor:
 
  Higgs MC:
+
+```
  Olivier Bondu <Olivier.Bondu@cern.ch>
  Pietro Govoni <pietro.govoni@cern.ch>
  Chayanit Asawatangtrakuldee <Chayanit.Asawatangtrakuldee@cern.ch>
  Prafulla Behera <prafulla.behera@cern.ch>
+```
 
-15) Send emails to these contacts (including Andreas Hinzmann, Eiko, and Alexandra Carvalho in cc)
- and make your request. 
+4) Send emails to these contacts and include the following people in cc.
+ Note, in the email you need to add link to your google spreadsheet.
+
+```
+ Shin-Shan Yu <syu@cern.ch>
+ Alexandra Carvalho <alexandracaan@gmail.com>
+ Andreas Hinzmann <andreas.hinzmann@cern.ch>
+ Clemens Lange <clange@physik.uzh.ch>
+ Thiago Tomei <thiago.tomei@cern.ch>
+```
+ 
 
 
 
