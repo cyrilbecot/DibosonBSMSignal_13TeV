@@ -38,14 +38,41 @@ https://github.com/syuvivida/DibosonBSMSignal_13TeV/blob/master/gridpack_folder/
 cd DibosonBSMSignal_13TeV/gridpack_folder
 ```
 
-a) if you want to generate a narrow width 0.001 GeV for the signal
+  a) if you want to generate a narrow width 0.001 GeV for the signal
 
 ```
 ./scripts/card_generation.sh Zprime_Zh_Zlephbb mass_files/mass_points HVT_customizecards.dat
 ```
 
-b) if you want to generate a wider width for the signal, say 5% of the mass
+  b) if you want to generate a wider width for the signal, say 5% of the mass
 
 ```
 ./scripts/card_generation.sh Zprime_Zh_Zlephbb mass_files/mass_points HVT_customizecards.dat 0.05 medium
 ```
+
+6) If you have prepared cards different from those in the repository of DibosonBSMSignal_13TeV, please remember to make a pull request so that your cards will be stored in this repository
+
+to do so
+
+ a) fork this repository by clicking on the "Fork" symbol at the upper right corner of github page.
+
+ b) 
+``` 
+git clone git@github.com:<your_userID>/DibosonBSMSignal_13TeV.git
+
+cd DibosonBSMSignal_13TeV
+
+git add ...
+
+git commit -m "xxx"
+
+git push origin master
+```
+ c) at the github page:https://github.com/<your_userID>/DibosonBSMSignal_13TeV,
+
+  click on "Pull Request"
+ 
+
+
+  
+ 
