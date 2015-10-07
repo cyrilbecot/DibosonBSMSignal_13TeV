@@ -1,6 +1,6 @@
 How to use the LHE analyzer
 ======================
-
+```
   cmsrel CMSSW_7_1_19
 
   cd CMSSW_7_1_19/src/
@@ -12,7 +12,10 @@ How to use the LHE analyzer
   git cms-merge-topic syuvivida:7119_diboson_lhereader
 
   scramv1 b
+```
 
  3. To run,
 
+```
 cmsRun GeneratorInterface/LHEInterface/test/dumpLHE_cfg.py inputFiles="file:xxx.lhe" outputFile="test.root" maxEvents=-1
+```
