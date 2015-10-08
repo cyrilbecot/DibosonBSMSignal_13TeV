@@ -1,7 +1,7 @@
 How to use the LHE analyzer
 ======================
 
-1. Check out the package
+Check out the package
 
 ```
   cmsrel CMSSW_7_1_19
@@ -15,19 +15,19 @@ How to use the LHE analyzer
   git cms-merge-topic syuvivida:7119_diboson_lhereader
 ```
  
-2. Now you need to modify GeneratorInterface/LHEInterface/test/DummyLHEAnalyzer.cc so to compute the acceptance
+Now you need to modify GeneratorInterface/LHEInterface/test/DummyLHEAnalyzer.cc so to compute the acceptance
 
 ```
   emacs -nw GeneratorInterface/LHEInterface/test/DummyLHEAnalyzer.cc 
 ```
 
-3.  Once you modify, you need to compile the code
+Once you modify, you need to compile the code
 
 ```
   scramv1 b
 ```
 
-4. To run,
+To run,
 
 ```
  curl https://raw.githubusercontent.com/syuvivida/xtozh_common/13TeV_CMSSW747/macro_examples/dihiggs/runGreg.sh -o runGreg.sh
