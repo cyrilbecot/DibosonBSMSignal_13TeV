@@ -30,7 +30,7 @@ How to use the LHE analyzer
 4. To run,
 
 ```
- curl https://github.com/syuvivida/xtozh_common/blob/13TeV_CMSSW747/macro_examples/dihiggs/runGreg.sh -o runGreg.sh
+ curl https://raw.githubusercontent.com/syuvivida/xtozh_common/13TeV_CMSSW747/macro_examples/dihiggs/runGreg.sh -o runGreg.sh
 
  chmod 755 runGreg.sh
 
