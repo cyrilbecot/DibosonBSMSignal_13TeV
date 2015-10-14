@@ -3,5 +3,5 @@ set ignore_six_quark_processes False
 set gauge unitary
 set complex_mass_scheme False
 import model 2HDMexovv
-generate p p > h2, ( h2 > H H, H > b b~)
+generate p p > h2, ( h2 > h1 h1, h1 > b b~)
 output 2HDM_hh_hbbhbb
