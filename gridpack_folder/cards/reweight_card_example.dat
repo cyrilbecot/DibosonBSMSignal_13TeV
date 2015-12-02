@@ -1,0 +1,7 @@
+change rwgt_dir rwgt
+launch
+  set decay 39 200
+launch
+  set decay 39 400
+launch
+  set decay 39 800
