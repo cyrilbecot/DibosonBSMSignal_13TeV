@@ -1,9 +1,7 @@
 set param_card mass 39 MASS
 set param_card decay 39 WIDTH
-set param_card yukawa 4 0
 set param_card yukawa 5 4.8
 set param_card yukawa 6 172.5
-set param_card mass 4 0
 set param_card mass 5 4.8
 set param_card mass 6 172.5
 set param_card mass 23 91.1876
